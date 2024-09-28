@@ -1,0 +1,140 @@
+[core]
+  editor = subl -n -w
+  # pager = diff-so-fancy | less --tabs=2 -RFX
+  pager = delta
+
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Dracula
+  side-by-side = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[alias]
+  glast = log -1 HEAD
+  rbi = rebase --interactive
+  rbc = rebase --continue
+  mt = mergetool
+  lc = log ORIG_HEAD.. --stat --no-merges
+  lg = log --oneline --decorate --graph
+  bg = bisect good
+  bb = bisect bad
+  bs = bisect skip
+  bv = branch -v --list
+  lost = fsck --unreachable --no-reflogs
+  down = fetch --all -p
+  c = clone
+
+  # Add
+  a = add -A
+  aa = add .
+  ignora = update-index --assume-unchanged
+  noignora = update-index --no-assume-unchanged
+
+  # Commit
+  cm = commit -m
+  ca = commit --amend
+  cam = commit --amend -m
+
+  # Undo
+  undo = reset --soft HEAD~
+  forget = reset --hard
+  unstage = reset HEAD --
+
+  # help
+  wtf = help -w
+  count = rev-list HEAD --count
+  score = shortlog
+
+  # Checkout
+  co = checkout
+  cb = checkout -b
+  bco = "!git branch --all --sort=-committerdate | grep -v '^[*+]' | awk '{print $1}' | fzf --ansi -0 --preview 'git show --color=always {-1}' | sed 's/remotes\\/origin\\///g' | xargs -r git checkout"
+
+  # Branch
+  br = "!git branch --sort=-committerdate | grep -v '^[*+]' | awk '{print $1}' | fzf --ansi -0 --preview 'git show --color=always {-1}' | xargs -r git branch -D"
+
+  # Cherry-pick
+  chp = cherry-pick
+
+  # Diff
+  df = diff
+  dc = diff --cached
+  ds = diff --stat --relative
+  fls = diff-tree --no-commit-id --name-only -r
+
+  # List
+  tl = tag -l | fzf
+  bl = branch -a | fzf
+  rl = remote -v | fzf
+  stl = stash list | fzf
+
+  # Status
+  st = status -s
+
+  # Pull
+  pl   = pull
+
+  # Push
+  ps   = push
+  pso  = push origin
+  psu  = push upstream
+
+  # Remote
+  ra  = remote add
+  rao = remote add origin
+  rau = remote add upstream
+  rs  = remote set-url
+
+  # Logs
+  l  = log --pretty=format:'%Cgreen%h%Creset%C(auto)%d%Creset %C(cyan)<%an, %cr>%Creset %n %s' --decorate --abbrev-commit --date=relative --max-count=10005
+  la  = log --pretty=format:'%Cgreen%h%Creset%C(auto)%d%Creset %C(cyan)<%an, %cr>%Creset %n %s' --decorate --abbrev-commit --date=relative --all --max-count=15 --branches
+  ll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log -p
+  lt = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+[help]
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
+
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+
+[color]
+  ui = true
+
+[color "diff"]
+  meta = yellow bold
+  commit = green bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[pull]
+  rebase = false
+  #ff = only
+
+[init]
+  defaultBranch = main
