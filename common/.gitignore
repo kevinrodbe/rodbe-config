@@ -56,3 +56,6 @@ TODO
 .fleet
 .jampack
 .DS_STORE
+*.hash
+*.nxt
+*.log
