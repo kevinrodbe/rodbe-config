@@ -66,10 +66,10 @@
   fls = diff-tree --no-commit-id --name-only -r
 
   # List
-  tl = tag -l | fzf
-  bl = branch -a | fzf
-  rl = remote -v | fzf
-  stl = stash list | fzf
+  tl = "!git tag -l | fzf"
+  bl = "!git branch -a | fzf"
+  rl = "!git remote -v | fzf"
+  stl = "!git stash list | fzf"
 
   # Status
   st = status -s
