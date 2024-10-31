@@ -21,10 +21,6 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 
-# OSX
-# =========================
-Icon?
-
 .DS_Store
 .AppleDouble
 .LSOverride
