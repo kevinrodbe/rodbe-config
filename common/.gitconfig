@@ -76,8 +76,8 @@
 
   # Pull
   pl   = pull
-  plo  = push origin
-  plu  = push upstream
+  plo  = pull origin
+  plu  = pull upstream
 
   # Push
   ps   = push
