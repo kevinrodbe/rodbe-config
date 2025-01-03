@@ -12,6 +12,9 @@ alias codei=code-insiders
 alias cz="npx cz"
 alias zed="/Applications/Zed.app/Contents/MacOS/cli"
 alias subl="open -a /Applications/Sublime\ Text.app"
+alias af="alias | fzf"
+alias gc="git config --list | fzf"
+alias ef="printenv | fzf"
 
 # tells me my IP Address
 alias myip='curl ip.appspot.com'
