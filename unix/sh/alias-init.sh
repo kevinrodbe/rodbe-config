@@ -9,12 +9,16 @@ alias man=batman
 alias j=autojump
 alias gc="git-stats -g"
 alias codei=code-insiders
+alias vsc="code ."
 alias cz="npx cz"
 alias zed="/Applications/Zed.app/Contents/MacOS/cli"
 alias subl="open -a /Applications/Sublime\ Text.app"
 alias af="alias | fzf"
 alias gc="git config --list | fzf"
 alias ef="printenv | fzf"
+alias o="open ."
+alias myalias="cat /.config/rodbe-config/unix/sh/alias-init.sh"
+alias mygit="cat ~/.config/rodbe-config/common/.gitconfig"
 
 # tells me my IP Address
 alias myip='curl ip.appspot.com'
@@ -42,7 +46,7 @@ alias _="cd -"
 
 # npm
 alias pn="pnpm"
-alias ntli="ntl -i"
+alias ntli="ntl -i -A"
 alias npkill="npx npkill"
 alias nch="npm-check"
 alias npmt="npm test"
